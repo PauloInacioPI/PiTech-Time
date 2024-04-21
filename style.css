@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(imgtime.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 15vw; /* Tamanho de fonte responsivo */
+    padding: 2%;
+}
+
+header{
+    position: absolute;
+    font-size: 5vh;
+    top: 5%;
+    left: 2%;
+    width: 5%;
+    height: 10%;
+}
+.alerta{
+    height: 100%;
+   width: 100%;
+}
+.alerta img{
+   height: 100%;
+   width: 100%;
+   cursor: pointer;
+}
+#txt {
+    display: flex;
+    /* flex-wrap: wrap;  */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Largura ajustada para ocupar 80% da largura da tela */
+    padding: 1%;
+}
+
+hr {
+    color: black;
+    background-color: black;
+    top: 38%;
+    border: none;
+    height: 10px;
+    width: 18%;
+    position: absolute;
+    display: none;
+}
+
+.times {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 1rem; /* Adiciona espaço entre os elementos */
+}
+
+.hours, .minutes, .seconds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23%;
+    height: 60%;
+    margin: 0.5rem; /* Adiciona espaço entre os elementos */
+    padding: 1rem; /* Adiciona espaço interno aos elementos */
+    border-radius: 1rem;
+    box-shadow: 1px 1px 20px 1px gray;
+    background-color: rgba(0,0,0,.5);
+}
+
+#temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2vh;
+    box-shadow: 1px 1px 20px 1px gray;
+    /* height: 10%; */
+    width: 40%;
+    padding: 2%;
+    border-radius: 1em;
+    background-color: rgba(0,0,0,.5);
+}
+.response{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+
+}
+
+.tema{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vh;
+    height: 5%;
+    width: 20%;
+    
+}
+.one{
+    background-color: white;
+    height: 100%;
+    width: 8%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: black;
+}
+/* Reduz o tamanho da fonte quando a largura da tela for menor que 600px */
+@media screen and (max-width: 740px) {
+    body {
+        font-size: 25vw;
+        background-image: url(clock-face-glowing-midnight-time-up-generative-ai.jpg);
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        background-position: center;
+    }
+    .hours, .minutes, .seconds {
+        height: 25%;
+        width: 33%;
+    }
+    hr{
+        width: 22%;
+    }
+    #temp{
+        width: 50vh;
+    }
+    
+}
+@media screen and (max-width: 680px) {
+    body {
+        font-size: 22vw;
+    }
+    .hours, .minutes, .seconds {
+        height: 35%;
+        width: 33%;
+    }
+    hr{
+        width: 22%;
+        top: 48.4%;
+        display: none;
+    }
+    .nomeCidade, .estado{
+        font-size: 5vh;
+    }
+    .one{
+        width: 30%;
+        margin-top: 5%;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 22vw;
+        height: 100%;
+    }
+    #txt{
+        flex-direction: column;
+        height: 90%;
+        padding: 2%;
+        margin: 1px;
+
+    }
+    .hours, .minutes, .seconds {
+        height: 40%;
+        width: 80%;
+        margin: 1px;
+    }
+    hr{
+        width: 22%;
+        top: 48.4%;
+        font-size: 5vh;
+    }
+}
