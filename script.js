@@ -8,10 +8,8 @@ class timeGeral {
         const minutes = today.getMinutes();
         const seconds = today.getSeconds();
 
-        
-
-        document.getElementById('txt').innerHTML = `<span class="hours">${hours}</span>:
-        <span class="minutes">${minutes}</span>:
+        document.getElementById('txt').innerHTML = `<span class="hours">${hours}:</span>
+        <span class="minutes">${minutes}:</span>
         <span class="seconds">${seconds}</span>`;
 
         setTimeout(() => {
@@ -74,36 +72,24 @@ function exibirDados(dados) {
 
     let tempdisplay = document.querySelector('#temp')
 
-    if (hours => 18) {
-        tempdisplay.innerHTML = `
-            <h1 class="message">Olá Boa noite</h1><br>
-            <p class="response">A Temperatura em Santo Antônio de Pádua hoje é de: ${temperatura}°C <br>
-            Com Sensação Térmica de : ${sensacaoTermica}°C <br></p>`
-    }
-    else if (hours => 12) {
-        tempdisplay.innerHTML = `
-            <h1 class="message">Olá Bom tarde</h1><br>
-            <p class="response">A Temperatura em Santo Antônio de Pádua hoje é de: ${temperatura}°C <br>
-            Com Sensação Térmica de : ${sensacaoTermica}°C <br></p>`
-    }
-    else {
-        tempdisplay.innerHTML = `
-            <h1 class="message">Olá Bom dia</h1><br>
-            <p class="response">A Temperatura em Santo Antônio de Pádua hoje é de: ${temperatura}°C <br>
-            Com Sensação Térmica de : ${sensacaoTermica}°C <br></p>`
-    }
+    tempdisplay.innerHTML = `
+            <h1 class="message">Olá</h1>
+            <h1 class="city">Santo Antônio de Pádua<h1>
 
+            <div class="response-temp"><img src="assets/sun_3073665.png" alt="" class="img-temp">
+            <p>${temperatura} C°</p> </div><br>
+            <span style='color:#6495ED; font-weight: 1000;'> Sensação Térmica de : ${sensacaoTermica}°C</span> <br></p>`
 }
 buscarCidade('Santo antonio de padua')
 
 
-function teme() {
-    let temp = document.querySelector('#temp')
-    // let body = document.querySelector('body')
+// function teme() {
+//     let temp = document.querySelector('#temp')
+//     // let body = document.querySelector('body')
 
-    document.body.style.background = 'black';
-    temp.style.background = 'rgba(0,0,0,.5)'
-}
+//     document.body.style.background = 'black';
+//     temp.style.background = 'rgba(0,0,0,.5)'
+// }
 /* Caso queira pesquisar
  function cliqueNoBotao() {
     let cidade = document.querySelector('.caracter').value;
@@ -117,21 +103,97 @@ function teme() {
 
 
 // }
-const box = document.querySelector('#temp');
-let scale = 1;
-let growing = true;
+// const box = document.querySelector('#temp');
+// let scale = 1;
+// let growing = true;
 
-setInterval(() => {
-  if (growing) {
-    scale += 0.05; // Aumenta em 5%
-    box.style.transform = `scale(${scale})`;
-  } else {
-    scale -= 0.05; // Diminui em 5%
-    box.style.transform = `scale(${scale})`;
-  }
+// setInterval(() => {
+//     if (growing) {
+//         scale += 0.05; // Aumenta em 5%
+//         box.style.transform = `scale(${scale})`;
+//     } else {
+//         scale -= 0.05; // Diminui em 5%
+//         box.style.transform = `scale(${scale})`;
+//     }
 
-  box.style.boxShadow = '1px 1px 20px 10px rgba(0, 0, 0)';
+//     //   box.style.boxShadow = '1px 1px 20px 10px rgba(0, 0, 0)';
 
-  // Alterna entre crescimento e redução de tamanho
-  growing = !growing;
-}, 999); // Intervalo total de 3 segundos
+//     // Alterna entre crescimento e redução de tamanho
+//     growing = !growing;
+// }, 999); // Intervalo total de 3 segundos
+
+
+
+// const date = new Date();
+// const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+// const diaAtual = diasDaSemana[date.getDay()];
+
+// if (diaAtual == 'Domingo' || diaAtual == 'Segunda-feira' || diaAtual == 'Terça-feira' ||
+//     diaAtual == 'Quarta-feira' || diaAtual == 'Quinta-feira' || diaAtual == 'Sexta-feira' || diaAtual == 'Sábado'
+// ) {
+//     console.log('Descanse');
+// } else {
+//     console.log('Estude');
+// }
+
+// console.log(diaAtual);
+function DiaDaSemana() {
+
+    const dateAtual = document.querySelector('.date-atual')
+    const response = document.querySelector('.response')
+
+
+    const date = new Date();
+    const diasDaSemana = ['Domingo','Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+    const diaAtual = diasDaSemana[date.getDay()];
+
+    function mostrarDiaAtual() {
+        dateAtual.innerHTML = `Hoje é ${diaAtual}<br>`
+
+        const mensagensPorDia = {          
+            'Segunda-feira': 'Você vai aprender mais sobre API REST!',
+            'Terça-feira': 'Você vai aprender mais sobre REACT!',
+            'Quarta-feira': 'Você vai aprender mais sobre NODE / MYSQL!',
+            'Quinta-feira': 'Você vai aprender mais sobre POO / Functons!',
+            'Sexta-feira': 'Finalmente Sexta-feira! Pratique, você está livre!',
+            'Sábado': 'Dia de descansar e recarregar as energias!',
+            'Domingo': 'Um ótimo dia para relaxar!'
+        };
+        diasDaSemana.forEach(element => {
+
+            if (element == diaAtual) {
+                response.innerHTML =  `${mensagensPorDia[element]}`
+            }
+            
+        });
+    }
+
+    // function exibirAlert() {
+    //     const mensagensPorDia = {
+    //         'Domingo': 'Hoje é um ótimo dia para relaxar!',
+    //         'Segunda-feira': 'Você vai aprender mais sobre API REST!',
+    //         'Terça-feira': 'Você vai aprender mais sobre REACT!',
+    //         'Quarta-feira': 'Você vai aprender mais sobre NODE / MYSQL!',
+    //         'Quinta-feira': 'Você vai aprender mais sobre POO / Functons!',
+    //         'Sexta-feira': 'Finalmente Sexta-feira! Pratique, você está livre!',
+    //         'Sábado': 'Dia de descansar e recarregar as energias!'
+    //     };
+    //     diasDaSemana.forEach(element => {
+    //         response.innerHTML =  `${mensagensPorDia[element]}`
+    //     });
+    //     // if (diaAtual === 'Domingo') {
+    //     //     response.innerHTML =  `Você vai aprender mais sobre API REST`
+    //     // } else {
+    //     //     console.log('tem cod errado');
+    //     // }
+    // }
+
+    return {
+        // verificarAtividade,
+        mostrarDiaAtual,
+        // exibirAlert
+    };
+}
+
+const dia = DiaDaSemana();
+dia.mostrarDiaAtual();
