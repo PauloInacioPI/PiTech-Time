@@ -184,6 +184,7 @@ hr {
         /* background-size: cover; */
         /* background-repeat: no-repeat; */
         background-position: center;
+        height: 100vh;
     }
 
     .hours,
@@ -206,6 +207,7 @@ hr {
 @media screen and (max-width: 680px) {
     body {
         font-size: 22vw;
+        
     }
 
     .hours,
@@ -236,10 +238,11 @@ hr {
     body {
         font-size: 22vw;
         height: 100%;
+        height: 100vh;
     }
 
     #txt {
-        flex-direction: column;
+        /* flex-direction: column; */
         height: 90%;
         padding: 2%;
         margin: 1%;

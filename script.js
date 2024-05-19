@@ -8,8 +8,8 @@ class timeGeral {
         const minutes = today.getMinutes();
         const seconds = today.getSeconds();
 
-        document.getElementById('txt').innerHTML = `<span class="hours">${hours}:</span>
-        <span class="minutes">${minutes}:</span>
+        document.getElementById('txt').innerHTML = `<span class="hours">${hours}: </span>
+        <span class="minutes">${minutes}: </span>
         <span class="seconds">${seconds}</span>`;
 
         setTimeout(() => {
@@ -77,9 +77,23 @@ function exibirDados(dados) {
             <h1 class="city">Santo Antônio de Pádua<h1>
 
             <div class="response-temp"><img src="assets/sun_3073665.png" alt="" class="img-temp">
-            <p>${temperatura} C°</p> </div><br>
-            <span style='color:#6495ED; font-weight: 1000;'> Sensação Térmica de : ${sensacaoTermica}°C</span> <br></p>`
+            <p>${temperatura.toFixed(0)} C°</p> </div><br>
+            <span style='color:#6495ED; font-weight: 1000;'> Sensação Térmica de : ${sensacaoTermica.toFixed(0)}°C</span> <br></p>`
+
+    if (temperatura <= 25 ) {
+        tempdisplay.innerHTML = `
+            <h1 class="message">Olá</h1>
+            <h1 class="city">Santo Antônio de Pádua<h1>
+
+            <div class="response-temp"><img src="assets/nuvem.png" alt="" class="img-temp">
+            <p>${temperatura.toFixed(0)} C°</p> </div><br>
+            <span style='color:#6495ED; font-weight: 1000;'> Sensação Térmica de : ${sensacaoTermica.toFixed(0)}°C</span> <br></p>`
+
+    }
 }
+
+    
+
 buscarCidade('Santo antonio de padua')
 
 
